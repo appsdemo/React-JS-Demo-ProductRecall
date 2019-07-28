@@ -1,12 +1,6 @@
 // import React from 'react';
-// import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom';
 // import App from './App';
-//
-// it('renders without crashing', () => {
-//   const div = document.createElement('div');
-//   ReactDOM.render(<App />, div);
-//   ReactDOM.unmountComponentAtNode(div);
-// });
 
 import React from 'react'
 import { mount, shallow } from 'enzyme';
@@ -15,12 +9,18 @@ import App from './App';
 
 
 const app = shallow(<App />);
-it('App renders correctly', () => {
-  // expect(app.state().values).toEqual({});
-  const wrapper = app;
-  const instance = wrapper.instance();
-  expect(instance).toEqual(null);
-})
+// it('App renders correctly', () => {
+//   // expect(app.state().values).toEqual({});
+//   const wrapper = app;
+//   const instance = wrapper.instance();
+//   expect(instance).toEqual(null);
+// })
+
+it('renders without crashing', () => {
+  const div = document.createElement('div');
+  ReactDOM.render(<App />, div);
+  ReactDOM.unmountComponentAtNode(div);
+});
 
 // Product recall tests
 // import ProductRecall from './Components/ProductRecall';
