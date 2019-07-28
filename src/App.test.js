@@ -16,7 +16,10 @@ import App from './App';
 
 const app = shallow(<App />);
 it('App renders correctly', () => {
-  expect(app).toMatchSnapshot();
+  // expect(app.state().values).toEqual({});
+  const wrapper = app;
+  const instance = wrapper.instance();
+  expect(instance).to.equal(null);
 })
 
 // Product recall tests
