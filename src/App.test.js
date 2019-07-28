@@ -15,14 +15,15 @@ import App from './App';
 
 
 const app = shallow(<App />);
+it('App renders correctly', () => {
+  expect(app).toMatchSnapshot();
+})
 
 // Product recall tests
 // import ProductRecall from './Components/ProductRecall';
 //
 // const productRecall = shallow(<ProductRecall />);
-// it('renders correctly', () => {
-//   expect(app).toMatchSnapshot();
-// })
+
 //
 // it('initializes product recall with an empty JSON', () => {
 //   expect(productRecall.state().values).toEqual({});
