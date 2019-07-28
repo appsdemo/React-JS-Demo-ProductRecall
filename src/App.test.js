@@ -17,21 +17,21 @@ import App from './App';
 const app = shallow(<App />);
 
 // Product recall tests
-import ProductRecall from './Components/ProductRecall';
-
-const productRecall = shallow(<ProductRecall />);
-it('renders correctly', () => {
-  expect(app).toMatchSnapshot();
-})
-
-it('initializes product recall with an empty JSON', () => {
-  expect(productRecall.state().values).toEqual({});
-})
-
-it('submits the product recall form to state', () => {
-  const wrapper = mount(<ProductRecall />)
-  wrapper.find('.btn-submit').last().simulate('click');
-  wrapper.update()
-  console.log('LOG',wrapper.state());
-  expect(wrapper.state().isSubmitted).toEqual(true);
-})
+// import ProductRecall from './Components/ProductRecall';
+//
+// const productRecall = shallow(<ProductRecall />);
+// it('renders correctly', () => {
+//   expect(app).toMatchSnapshot();
+// })
+//
+// it('initializes product recall with an empty JSON', () => {
+//   expect(productRecall.state().values).toEqual({});
+// })
+//
+// it('submits the product recall form to state', () => {
+//   const wrapper = mount(<ProductRecall />)
+//   wrapper.find('.btn-submit').last().simulate('click');
+//   wrapper.update()
+//   console.log('LOG',wrapper.state());
+//   expect(wrapper.state().isSubmitted).toEqual(true);
+// })
