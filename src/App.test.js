@@ -19,7 +19,7 @@ it('App renders correctly', () => {
   // expect(app.state().values).toEqual({});
   const wrapper = app;
   const instance = wrapper.instance();
-  expect(instance).to.equal(null);
+  expect(instance).toEqual(null);
 })
 
 // Product recall tests
