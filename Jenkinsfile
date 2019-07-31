@@ -36,7 +36,6 @@ pipeline {
                 withEnv(['JENKINS_NODE_COOKIE=dontKillMe']) {
                   nodejs(nodeJSInstallationName: 'NodeJS 12.7.0') {
                       sh 'su jenkins'
-                      sh 'cat ~/.ssh/id_rsa.pub'
                       sh 'ssh ec2-user@52.66.247.248 "cd React-JS-Demo-ProductRecall && git reset --hard HEAD && git pull && ls && npm start"'
                   }
                 }
