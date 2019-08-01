@@ -1,6 +1,12 @@
 // import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 // import App from './App';
+//
+// it('renders without crashing', () => {
+//   const div = document.createElement('div');
+//   ReactDOM.render(<App />, div);
+//   ReactDOM.unmountComponentAtNode(div);
+// });
 
 import React from 'react'
 import { mount, shallow } from 'enzyme';
@@ -9,33 +15,23 @@ import App from './App';
 
 
 const app = shallow(<App />);
-// it('App renders correctly', () => {
-//   // expect(app.state().values).toEqual({});
-//   const wrapper = app;
-//   const instance = wrapper.instance();
-//   expect(instance).toEqual(null);
-// })
-
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
 
 // Product recall tests
-// import ProductRecall from './Components/ProductRecall';
-//
-// const productRecall = shallow(<ProductRecall />);
+import ProductRecall from './Components/ProductRecall';
 
-//
-// it('initializes product recall with an empty JSON', () => {
-//   expect(productRecall.state().values).toEqual({});
-// })
-//
-// it('submits the product recall form to state', () => {
-//   const wrapper = mount(<ProductRecall />)
-//   wrapper.find('.btn-submit').last().simulate('click');
-//   wrapper.update()
-//   console.log('LOG',wrapper.state());
-//   expect(wrapper.state().isSubmitted).toEqual(true);
-// })
+const productRecall = shallow(<ProductRecall />);
+it('renders correctly', () => {
+  expect(app).toMatchSnapshot();
+})
+
+it('initializes product recall with an empty JSON', () => {
+  expect(productRecall.state().values).toEqual({});
+})
+
+it('submits the product recall form to state', () => {
+  const wrapper = mount(<ProductRecall />)
+  wrapper.find('.btn-submit').last().simulate('click');
+  wrapper.update()
+  console.log('LOG',wrapper.state());
+  expect(wrapper.state().isSubmitted).toEqual(true);
+})
